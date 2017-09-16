@@ -1,14 +1,13 @@
 import awareness as a
 import wave
 
-wf = wave.open("audio.wav", 'rb')
-
 
 class PCMAudioStreamer(a.LocalComponent):
     inputs = 0
     outputs = 4 # 16-bit sample per channel
 
     def run(self, input, progress_callback=None):
+        wf = wave.open("audio.wav", 'rb')
         data = wf.readframes(1024)
         while data != b'':
             data_spliced = [data[x:x+4] for x in range(0, len(data),4)]
