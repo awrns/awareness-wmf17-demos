@@ -44,7 +44,7 @@ class DivideTogether(a.LocalComponent):
         return a.Stream(output)
 
 
-
+a.backend.NativeBackend.setup_logger()
 machine2 = a.LocalOperator(b'localhost', port=1602)
 machine2.components = [Multiply5(), MultiplyTogether(), Divide5(), DivideTogether()]
 
