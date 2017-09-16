@@ -29,7 +29,7 @@ class Divide5(a.LocalComponent):
     def run(self, input, **kwargs):
         output = []
         for item in input.items:
-            output.append([item[0] / 5])
+            output.append([item[0] // 5])
         return a.Stream(output)
 
 
@@ -40,7 +40,7 @@ class DivideTogether(a.LocalComponent):
     def run(self, input, **kwargs):
         output = []
         for item in input.items:
-            output.append([item[0] / item[1]])
+            output.append([item[0] // item[1]])
         return a.Stream(output)
 
 

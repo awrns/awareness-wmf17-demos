@@ -7,11 +7,19 @@ avgdata = a.Set(
 			[1,2,3,4,5],
 			[2,3,4,5,6],
 			[1,3,5,7,9],
+			[8,7,5,3,2],
+			[1,2,3,4,5],
+			[2,3,4,5,6],
+			[1,3,5,7,9],
 			[8,7,5,3,2]
 		]
 	),
 	a.Stream(
 		[
+			[3],
+			[4],
+			[5],
+			[5],
 			[3],
 			[4],
 			[5],
@@ -28,6 +36,6 @@ playground.remote_operators = [
 ]
 
 
-result = playground.search(1, avgdata, 2)
+result = playground.search(1, avgdata, 4)
 
 print(result.operations)
