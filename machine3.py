@@ -16,7 +16,7 @@ class PCMAudioStreamer(a.LocalComponent):
             print(stream.items)
             progress_callback(stream)
             data = wf.readframes(input.count)
-        return a.Stream.blankFromCountParameters(input.count, 4)
+        return a.Stream.from_blank(input.count, 4)
 
 
 machine3 = a.LocalOperator(b'localhost', port=1603)
