@@ -23,8 +23,6 @@ def stream_callback(stream):
 assembly = a.Assembly(
 	[
 	    (b'localhost',1603,0,0,0),
-	    (b'localhost',1602,2,1,1),
-	    (b'localhost', 1602,2,3,3)
 	]
 
 )
