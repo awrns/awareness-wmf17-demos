@@ -22,5 +22,4 @@ def stream_callback(stream):
 
 mediademo = a.RemoteOperator(b'localhost', port=1603)
 with mediademo:
-	mediademo.retrieve_components()
 	mediademo.process(0, a.Stream.from_blank(1024, 0), progress_callback = stream_callback)

@@ -1,7 +1,7 @@
 import awareness as a
 
 
-avgdata = a.Set(
+sumdata2 = a.Set(
 	a.Stream(
 		[
 			[1,2,3,4,5],
@@ -16,42 +16,14 @@ avgdata = a.Set(
 	),
 	a.Stream(
 		[
-			[3],
-			[4],
-			[5],
-			[5],
-			[3],
-			[4],
-			[5],
-			[5]
-		]
-	)
-)
-
-
-sumdata = a.Set(
-	a.Stream(
-		[
-			[1,2],
-			[2,3],
-			[1,3],
-			[8,7],
-			[1,2],
-			[2,3],
-			[1,3],
-			[8,7]
-		]
-	),
-	a.Stream(
-		[
-			[1,2,3],
-			[2,3,5],
-			[1,3,4],
-			[8,7,15],
-			[1,2,3],
-			[2,3,5],
-			[1,3,4],
-			[8,7,15]
+			[3, 8],
+			[5, 10],
+			[4, 14],
+			[15, 7],
+			[3, 8],
+			[5, 10],
+			[4, 14],
+			[15, 7]
 		]
 	)
 )
@@ -64,6 +36,6 @@ playground.remote_operators = [
 ]
 
 
-result = playground.search(1, sumdata, 4)
+result = playground.search(1, sumdata2, 4)
 
 print(result.operations)
