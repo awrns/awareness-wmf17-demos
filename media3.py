@@ -20,6 +20,6 @@ def stream_callback(stream):
 	return True
 
 
-mediademo = a.RemoteOperator(b'192.168.2.4')
+mediademo = a.RemoteOperator(b'localhost')
 with mediademo:
 	mediademo.process(0, a.Stream.from_blank(1024, 0), progress_callback = stream_callback)
