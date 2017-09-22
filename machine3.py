@@ -1,5 +1,6 @@
 import awareness as a
 import wave
+import numpy
 
 
 class PCMAudioStreamer(a.LocalComponent):
@@ -10,8 +11,9 @@ class PCMAudioStreamer(a.LocalComponent):
         wf = wave.open("audio.wav", 'rb')
         data = wf.readframes(input.count)
         while data != b'':
-            data_spliced = [data[x:x+4] for x in range(0, len(data),4)]
-            stream = a.Stream.from_bytes(data_spliced)
+            data_spliced = numpy.fromstring(data, dtype=numpy.uint8)
+            data_spliced.shape = (-1, 4)
+            stream = a.Stream(data_spliced)
             print("Sending a.Stream containing:")
             print(stream.items)
             progress_callback(stream)
