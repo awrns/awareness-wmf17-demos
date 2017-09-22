@@ -19,8 +19,20 @@ class PCMAudioStreamer(a.LocalComponent):
         return a.Stream.from_blank(input.count, 4)
 
 
+
+class SetZero(a.LocalComponent):
+    inputs = 1
+    outputs = 1
+
+    def run(self, input, **kwargs):
+        output = []
+        for item in input.items:
+            output.append([0])
+        return a.Stream(output)
+
+
 machine3 = a.LocalOperator(b'192.168.2.4')
-machine3.components = [PCMAudioStreamer()]
+machine3.components = [PCMAudioStreamer(), SetZero()]
 
 
 machine3.provider.join()

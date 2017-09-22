@@ -20,6 +20,13 @@ def stream_callback(stream):
 	return True
 
 
-mediademo = a.RemoteOperator(b'localhost')
-with mediademo:
-	mediademo.process(0, a.Stream.from_blank(1024, 0), progress_callback = stream_callback)
+assembly = a.Assembly(
+	[
+	    (b'localhost',1600,0,0,0),
+	    (b'localhost',1600,1,0,0),
+	    (b'localhost',1600,1,1,1),
+	]
+
+)
+
+assembly.run(a.Stream.from_blank(1024, 0), progress_callback = stream_callback)
