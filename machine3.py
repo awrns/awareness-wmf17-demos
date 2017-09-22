@@ -19,7 +19,7 @@ class PCMAudioStreamer(a.LocalComponent):
         return a.Stream.from_blank(input.count, 4)
 
 
-machine3 = a.LocalOperator(b'localhost', port=1603)
+machine3 = a.LocalOperator(b'192.168.2.4')
 machine3.components = [PCMAudioStreamer()]
 
 

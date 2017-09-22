@@ -45,7 +45,7 @@ class SubtractTogether(a.LocalComponent):
 
 
 a.backend.NativeBackend.setup_logger()
-machine1 = a.LocalOperator(b'localhost', port=1601)
+machine1 = a.LocalOperator(b'192.168.2.5')
 machine1.components = [Add1(), AddTogether(), Subtract1(), SubtractTogether()]
 
 

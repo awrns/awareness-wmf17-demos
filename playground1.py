@@ -32,8 +32,8 @@ avgdata = a.Set(
 
 playground = a.LocalOperator(b'localhost')
 playground.remote_operators = [
-	a.RemoteOperator(b'localhost', port=1601),
-	a.RemoteOperator(b'localhost', port=1602)
+	a.RemoteOperator(b'192.168.2.5'),
+	a.RemoteOperator(b'192.168.2.6')
 ]
 
 

@@ -45,7 +45,7 @@ class DivideTogether(a.LocalComponent):
 
 
 a.backend.NativeBackend.setup_logger()
-machine2 = a.LocalOperator(b'localhost', port=1602)
+machine2 = a.LocalOperator(b'192.168.2.6')
 machine2.components = [Multiply5(), MultiplyTogether(), Divide5(), DivideTogether()]
 
 
