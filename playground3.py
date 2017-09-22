@@ -29,7 +29,7 @@ sumdata2 = a.Set(
 )
 
 
-playground = a.LocalOperator(b'localhost')
+playground = a.LocalOperator(b'localhost', port=1601)
 playground.remote_operators = [
 	a.RemoteOperator(b'192.168.2.5'),
 	a.RemoteOperator(b'192.168.2.6')
